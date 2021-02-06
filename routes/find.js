@@ -16,13 +16,13 @@ function Obj(distance, idobject, operator, plan, price, min, sms, gb) {
 function distanceMetricOne(sourceX, sourceY, sourceZ, sourceW, targetX, targetY, targetZ, targetW, idobject, operator, plan, pricePrio, minPrio, smsPrio, gbPrio) {
     return new Obj(Math.sqrt(pricePrio * Math.pow((sourceX - targetX), 2) + minPrio *
         Math.pow((sourceY - targetY), 2) + smsPrio * Math.pow((sourceZ - targetZ), 2) + gbPrio *
-        Math.pow((sourceW - targetW), 2)), idobject, operator, plan, sourceX, sourceY, sourceZ, sourceW);
+        Math.pow((sourceW - targetW), 2)), idobject, operator, plan, targetX, targetY, targetZ, targetW);
 }
 
 function distanceMetricTwo(sourceX, sourceY, sourceZ, sourceW, targetX, targetY, targetZ, targetW, idobject, operator, plan, pricePrio, minPrio, smsPrio, gbPrio) {
     return new Obj(Math.max(pricePrio * Math.abs((sourceX - targetX)),
         minPrio * Math.abs((sourceY - targetY)), smsPrio * Math.abs((sourceZ - targetZ)), gbPrio * Math.abs((sourceW - targetW))), idobject, operator, plan, 
-        sourceX, sourceY, sourceZ, sourceW);
+        targetX, targetY, targetZ, targetW);
 }
 
 function readFile() {
