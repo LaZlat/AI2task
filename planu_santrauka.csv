@@ -1,0 +1,40 @@
+﻿idobject,operator,plan,price,min,sms,gb
+1,Tele2,1 GB,8.5,-1,-1,1
+2,Tele2,5 GB,11.9,-1,-1,5
+3,Tele2,10 GB,15.9,-1,-1,10
+4,Tele2,20 GB,19.9,-1,-1,20
+5,Tele2,50 GB,21.9,-1,-1,50
+6,Tele2,Neriboti GB,27.9,-1,-1,-1
+7,Telia,Start,9,-1,-1,1
+8,Telia,Flexi 4,12,-1,-1,4
+9,Telia,Flexi 8,15,-1,-1,8
+10,Telia,Flexi 12,19,-1,-1,12
+11,Telia,Flexi 20,23,-1,-1,20
+12,Telia,Flexi 40,25,-1,-1,40
+13,Telia,Neribotai,29,-1,-1,-1
+14,Bitė,Lengviau 1,8.9,500,-1,1
+15,Bitė,Lengviau 5,12.9,-1,-1,5
+16,Bitė,Lengviau 10,16.9,-1,-1,10
+17,Bitė,Lengviau 20,20.9,-1,-1,20
+18,Bitė,Lengviau 50,24.9,-1,-1,50
+19,Bitė,Lengviau 100,26.9,-1,-1,100
+20,Bitė,Lengviau neribotai,28.9,-1,-1,-1
+21,Labas,INF GB,12.99,-1,-1,-1
+22,Labas,7 GB,9.99,800,5000,7
+23,Labas,4 GB,7.99,500,5000,4
+24,Labas,300 MIN,3.99,300,5000,0
+25,Labas,INF MIN,5.99,-1,-1,0
+26,Labas,2 GB,5.49,300,5000,2
+27,Pildyk,199 MIN + 4 GB,4.99,199,-1,4
+28,Pildyk,199 MIN + 7 GB,6.99,199,-1,7
+29,Pildyk,199 MIN + INF GB,13.49,199,-1,-1
+30,Pildyk,INF MIN + 4 GB,7.49,-1,-1,4
+31,Pildyk,INF MIN + 7 GB,9.49,-1,-1,7
+32,Pildyk,INF MIN + INF GB,13.99,-1,-1,-1
+33,Ezys,MAXI9,9.99,-1,12000,9
+34,Ezys,MAXI6,8.99,-1,12000,6
+35,Ezys,MAXI3,6.99,-1,12000,3
+36,Ezys,MAXI1,5.49,-1,12000,1
+37,Ezys,MINI6,6.99,300,6000,6
+38,Ezys,MINI3,4.99,300,6000,3
+39,Ezys,MINI1,3.49,300,6000,1
