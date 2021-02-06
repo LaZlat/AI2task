@@ -11,4 +11,4 @@ http://localhost:3000/find/?met=1&price=8&priceprio=25&min=-1&minprio=50&sms=-1&
             smsprio - prioritetas nuo 0 iki 100. Bendrai sudejus visu prioritetas negali virsyti 100 (tipo procentai) Reikia validation fronte\
             gb - gb kiekis\
             gbprio - prioritetas nuo 0 iki 100. Bendrai sudejus visu prioritetas negali virsyti 100 (tipo procentai) Reikia validation fronte\
-            JEI NERIBOTI SIUSTI -1\
+            JEI NERIBOTI SIUSTI -1
