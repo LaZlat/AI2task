@@ -21,7 +21,7 @@ function distanceMetricOne(sourceX, sourceY, sourceZ, sourceW, targetX, targetY,
 
 function distanceMetricTwo(sourceX, sourceY, sourceZ, sourceW, targetX, targetY, targetZ, targetW, idobject, operator, plan, pricePrio, minPrio, smsPrio, gbPrio) {
     return new Obj(Math.max(pricePrio * Math.abs((sourceX - targetX)),
-        minPrio * Math.abs((sourceY - targetY)), smsPrio * Math.abs((sourceZ - targetZ)), gbPrio * Math.abs((sourceW - targetW))), idobject, operator, plan, 
+            minPrio * Math.abs((sourceY - targetY)), smsPrio * Math.abs((sourceZ - targetZ)), gbPrio * Math.abs((sourceW - targetW))), idobject, operator, plan,
         targetX, targetY, targetZ, targetW);
 }
 
@@ -40,7 +40,7 @@ function readFile() {
                 price: col[3],
                 min: col[4],
                 sms: col[5],
-                gb: col[6].replace( /[\r\n]+/gm, "" )
+                gb: col[6].replace(/[\r\n]+/gm, "")
             });
         }
         return plans;
@@ -59,7 +59,15 @@ function compare(a, b) {
     return 0;
 }
 
-router.get("/", function (req, res) {
+function checkOptions(plan) {
+    let result = true;
+    if (this[0] == 1) result &= (plan.min == -1);
+    if (this[1] == 1) result &= (plan.sms == -1);
+    if (this[2] == 1) result &= (plan.gb == -1);
+    return result;
+}
+
+router.get("/", function(req, res) {
     let distMetric = req.query.met;
     let price = req.query.price;
     let pricePrio = req.query.priceprio / 20;
@@ -70,8 +78,12 @@ router.get("/", function (req, res) {
     let gb = req.query.gb;
     let gbPrio = req.query.gbprio / 20;
 
+    let filter = req.query.opt || 0;
+
     let neighbourDistances = [];
     let plans = readFile();
+
+    plans = plans.filter(checkOptions, filter);
 
     plans.forEach(plan => {
         if (distMetric == 1)
