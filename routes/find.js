@@ -107,4 +107,44 @@ router.get("/", function(req, res) {
     res.send(finalPlan);
 })
 
+function operatorsArray(arr) {
+    var a = [];
+    for (var i = 0, l = arr.length; i < l; i++)
+        if (a.indexOf(arr[i].operator) === -1 && arr[i].operator !== '')
+            a.push(arr[i].operator);
+    return a;
+}
+
+function cheapestPlan(arr, op) {
+    let filtered = arr.filter((plan) => {
+        return plan.operator == op;
+    });
+
+    let min = filtered[0];
+    for (let i = 1, l = filtered.length; i < l; i++) {
+        if (filtered[i] < min) {
+            min = filtered[i];
+        }
+    }
+
+    return min;
+}
+
+router.get("/top", function(req, res) {
+    let plans = readFile();
+
+    let operators = operatorsArray(plans);
+
+    let result = [];
+    operators.forEach(operator => {
+        result.push(cheapestPlan(plans, operator));
+    });
+
+    result = result.sort((a, b) => {
+        return Number(a.price) < Number(b.price) ? -1 : 1;
+    })
+
+    res.send(result);
+})
+
 module.exports = router;
